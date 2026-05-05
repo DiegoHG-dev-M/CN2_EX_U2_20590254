@@ -1,0 +1,23 @@
+services:
+  db:
+    image: postgres:16.8
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.hostname == worker-1
+    environment:
+      POSTGRES_PASSWORD: admin1234
+      POSTGRES_DB: AgendaTec
+    volumes:
+     - pg_data:/var/lib/postgresql/data
+    networks:
+      - red_swarm
+
+volumes:
+  pg_data:
+    driver: local
+
+networks:
+  red_swarm:
+    external: true
