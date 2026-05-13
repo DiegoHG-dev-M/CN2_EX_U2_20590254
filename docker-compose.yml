@@ -7,7 +7,7 @@ services:
     ports:
       - 5010:5000
     environment:
-      DATABASE_URL: postgresql://postgres:admin1234@db_stack_db/cetech
+      DATABASE_URL: postgresql://postgres:admin1234@db_stack_db/AgendaTec
     networks:
       - red_swarm
 
